@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+:root {
+  --navy-500: #1d3557;
+  --gold-500: #ffc300;
+  --sage-500: #a8c686;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
