@@ -50,9 +50,13 @@ jobs:
           ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_PUBLIC_IP }} "echo Hello World"
 
       - name: Deploy to EC2
+        env:
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
         run: |
           # Sync the build directory to the EC2 instance
-          sudo rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" ./dist/ ubuntu@${{ secrets.EC2_PUBLIC_IP }}:/srv/sunday-ready-slns
+          echo "EC2_SSH_KEY" > private_key.pem
+          chmod 600 private_key.pem
+          rsync -avz -e "ssh -i private_key.pem -o StrictHostKeyChecking=no" ./dist/ ubuntu@${{ secrets.EC2_PUBLIC_IP }}:/srv/sunday-ready-slns
 
       - name: Restart Caddy
         run: |
