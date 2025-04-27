@@ -1,0 +1,286 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+4. Repository files, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+<additional_info>
+
+</additional_info>
+
+</file_summary>
+
+<directory_structure>
+public/
+  favicon.svg
+src/
+  components/
+    Calendly.astro
+  layouts/
+    Layout.astro
+  pages/
+    index.astro
+  styles/
+    global.css
+.gitignore
+.prettierrc
+astro.config.mjs
+package.json
+postcss.config.js
+tailwind.config.js
+tsconfig.json
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="public/favicon.svg">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
+    <path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
+    <style>
+        path { fill: #000; }
+        @media (prefers-color-scheme: dark) {
+            path { fill: #FFF; }
+        }
+    </style>
+</svg>
+</file>
+
+<file path="src/components/Calendly.astro">
+<!-- Calendly inline widget begin -->
+<div
+  class="calendly-inline-widget"
+  data-url="https://calendly.com/sundayreadysolutions/pco-health-check?background_color=f5f5f5&text_color=333333&primary_color=ffc300"
+  style="min-width:320px;height:700px;"
+>
+</div>
+<script
+  type="text/javascript"
+  src="https://assets.calendly.com/assets/external/widget.js"
+  async></script>
+<!-- Calendly inline widget end -->
+</file>
+
+<file path="src/pages/index.astro">
+---
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<Welcome />
+</Layout>
+</file>
+
+<file path="src/styles/global.css">
+@import "tailwindcss";
+
+:root {
+  --navy-500: #1d3557;
+  --gold-500: #ffc300;
+  --sage-500: #a8c686;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+</file>
+
+<file path=".prettierrc">
+{
+  "plugins": [
+    "prettier-plugin-astro",
+    "prettier-plugin-tailwindcss"
+  ],
+  "astroAllowShorthand": true,
+  "astroSortAttributes": "grouped"
+}
+</file>
+
+<file path="postcss.config.js">
+// postcss.config.js
+export default {
+  plugins: {
+    tailwindcss: {}, // Tailwind CSS plugin
+    autoprefixer: {}, // Autoprefixer to handle vendor prefixes
+  },
+};
+</file>
+
+<file path="tailwind.config.js">
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx,astro}", "./public/index.html"],
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          main: "#1D3557", // Navy Blue - trust, reliability
+          accent: "#FFC300", // Soft Gold - warmth, hope
+          secondary: "#A8C686", // Sage Green - growth, peace
+          background: "#F5F5F5", // Light Gray - clean, modern
+          text: "#333333", // Charcoal - clear, readable
+        },
+      },
+    },
+  },
+  plugins: [],
+};
+</file>
+
+<file path="tsconfig.json">
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"]
+}
+</file>
+
+<file path="src/layouts/Layout.astro">
+<!doctype html>
+<template>
+  <html lang="en">
+    <head>
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-N3ES0T09G1"></script>
+      <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-N3ES0T09G1");
+      </script>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Planning Center Health Check</title>
+      <link rel="stylesheet" href="/tailwind.css" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </head>
+    <!-- Google tag (gtag.js) -->
+    <body class="bg-gray-50">
+      <main class="container mx-auto px-4 py-8">
+        <slot />
+      </main>
+
+      <!-- Footer -->
+      <footer class="mt-12 bg-gray-900 py-4 text-white">
+        <div class="container mx-auto px-4 text-center">
+          © 2025 Sunday Ready Solutions. All rights reserved.
+        </div>
+      </footer>
+    </body>
+  </html>
+</template>
+</file>
+
+<file path=".gitignore">
+# build output
+dist/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+.aider*
+</file>
+
+<file path="astro.config.mjs">
+// @ts-check
+import { defineConfig } from "astro/config";
+
+import tailwindcss from "@tailwindcss/vite";
+
+// https://astro.build/config
+export default defineConfig({
+  vite: {
+    plugins: [tailwindcss()],
+  },
+});
+</file>
+
+<file path="package.json">
+{
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.4",
+    "astro": "^5.7.5",
+    "framer-motion": "^12.9.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.1.4"
+  }
+}
+</file>
+
+</files>
