@@ -51,6 +51,8 @@ jobs:
       - name: Deploy to EC2
         run: |
           # Sync the build directory to the EC2 instance
+          echo ${{ secrets.EC2_PUBLIC_IP }}
+          echo ${{ secrets.EC2_SSH_PRIVATE_KEY }}
           sudo rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" ./dist/ ubuntu@${{ secrets.EC2_PUBLIC_IP }}:/srv/astro-project
 
       # Restart Caddy to serve new build
