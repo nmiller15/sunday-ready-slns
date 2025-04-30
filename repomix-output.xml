@@ -44,6 +44,9 @@ The content is organized as follows:
 </file_summary>
 
 <directory_structure>
+.github/
+  workflows/
+    build.yml
 public/
   favicon.svg
 src/
@@ -59,8 +62,6 @@ src/
 .prettierrc
 astro.config.mjs
 package.json
-postcss.config.js
-tailwind.config.js
 tsconfig.json
 </directory_structure>
 
@@ -82,85 +83,26 @@ This section contains the contents of the repository's files.
 <file path="src/components/Calendly.astro">
 <!-- Calendly inline widget begin -->
 <div
-  class="calendly-inline-widget"
-  data-url="https://calendly.com/sundayreadysolutions/pco-health-check?background_color=f5f5f5&text_color=333333&primary_color=ffc300"
-  style="min-width:320px;height:700px;"
+	class="calendly-inline-widget"
+	data-url="https://calendly.com/sundayreadysolutions/pco-health-check?background_color=f5f5f5&text_color=333333&primary_color=ffc300"
+	style="min-width:320px;height:1150px;"
 >
 </div>
-<script
-  type="text/javascript"
-  src="https://assets.calendly.com/assets/external/widget.js"
-  async></script>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async
+></script>
 <!-- Calendly inline widget end -->
-</file>
-
-<file path="src/pages/index.astro">
----
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
----
-
-<Layout>
-	<Welcome />
-</Layout>
-</file>
-
-<file path="src/styles/global.css">
-@import "tailwindcss";
-
-:root {
-  --navy-500: #1d3557;
-  --gold-500: #ffc300;
-  --sage-500: #a8c686;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-}
 </file>
 
 <file path=".prettierrc">
 {
-  "plugins": [
-    "prettier-plugin-astro",
-    "prettier-plugin-tailwindcss"
-  ],
-  "astroAllowShorthand": true,
-  "astroSortAttributes": "grouped"
+   "useTabs": true,
+   "singleQuote": true,
+   "trailingComma": "none",
+   "semi": false,
+   "printWidth": 100,
+   "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+   "pluginSearchDirs": false
 }
-</file>
-
-<file path="postcss.config.js">
-// postcss.config.js
-export default {
-  plugins: {
-    tailwindcss: {}, // Tailwind CSS plugin
-    autoprefixer: {}, // Autoprefixer to handle vendor prefixes
-  },
-};
-</file>
-
-<file path="tailwind.config.js">
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx,astro}", "./public/index.html"],
-  theme: {
-    extend: {
-      colors: {
-        brand: {
-          main: "#1D3557", // Navy Blue - trust, reliability
-          accent: "#FFC300", // Soft Gold - warmth, hope
-          secondary: "#A8C686", // Sage Green - growth, peace
-          background: "#F5F5F5", // Light Gray - clean, modern
-          text: "#333333", // Charcoal - clear, readable
-        },
-      },
-    },
-  },
-  plugins: [],
-};
 </file>
 
 <file path="tsconfig.json">
@@ -173,45 +115,69 @@ module.exports = {
 
 <file path="src/layouts/Layout.astro">
 <!doctype html>
-<template>
-  <html lang="en">
-    <head>
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-N3ES0T09G1"></script>
-      <script is:inline>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
+<html lang="en">
+	<head>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-N3ES0T09G1"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || []
+			function gtag() {
+				dataLayer.push(arguments)
+			}
+			gtag('js', new Date())
 
-        gtag("config", "G-N3ES0T09G1");
-      </script>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Planning Center Health Check</title>
-      <link rel="stylesheet" href="/tailwind.css" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-      />
-    </head>
-    <!-- Google tag (gtag.js) -->
-    <body class="bg-gray-50">
-      <main class="container mx-auto px-4 py-8">
-        <slot />
-      </main>
+			gtag('config', 'G-N3ES0T09G1')
+		</script>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Planning Center Health Check</title>
+		<link rel="stylesheet" href="/tailwind.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<!-- Google tag (gtag.js) -->
+	<body class="bg-gray-50">
+		<main class="container mx-auto px-4 py-8">
+			<slot />
+		</main>
 
-      <!-- Footer -->
-      <footer class="mt-12 bg-gray-900 py-4 text-white">
-        <div class="container mx-auto px-4 text-center">
-          © 2025 Sunday Ready Solutions. All rights reserved.
-        </div>
-      </footer>
-    </body>
-  </html>
-</template>
+		<!-- Footer -->
+		<footer class="mt-12 bg-gray-900 py-4 text-white">
+			<div class="container mx-auto px-4 text-center">
+				© 2025 Sunday Ready Solutions. All rights reserved.
+			</div>
+		</footer>
+	</body>
+</html>
+</file>
+
+<file path="src/styles/global.css">
+/* Import Tailwind's default styles */
+@import "tailwindcss";
+
+/* Define custom brand colors using CSS variables */
+:root {
+  --color-navy-500: #1d3557; /* Navy Blue */
+  --color-gold-500: #ffc300; /* Soft Gold */
+  --color-sage-500: #a8c686; /* Sage Green */
+  --color-background: #f5f5f5; /* Light Gray */
+  --color-text-color: #333333; /* Charcoal Text */
+}
+
+/* Global Styles */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--background); /* Light Gray */
+  color: var(--text-color); /* Charcoal */
+  line-height: 1.6; /* Improved readability */
+}
+
+h1,
+h2,
+h3 {
+  color: var(--navy-500); /* Navy Blue for headings */
+}
 </file>
 
 <file path=".gitignore">
@@ -270,17 +236,168 @@ export default defineConfig({
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
     "astro": "^5.7.5",
-    "framer-motion": "^12.9.2"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.3",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4.1.4"
   }
 }
+</file>
+
+<file path="src/pages/index.astro">
+---
+import Calendly from '../components/Calendly.astro'
+import Layout from '../layouts/Layout.astro'
+import '../styles/global.css'
+---
+
+<Layout>
+	<div class="container mx-auto px-6 py-12">
+		<!-- Hero Section -->
+		<section class="mb-12 text-center">
+			<h1 class="mb-4 text-4xl leading-tight font-bold text-[#1D3557]">
+				It's time to make Planning Center work for you...finally!
+			</h1>
+			<p class="mb-8 text-xl text-gray-700">
+				Not sure where to start in PCO? In just 40 minutes, we'll assess your system and create a
+				clear path to optimize workflows, clean things up, and save time for what matters most: <span
+					class="font-semibold">ministry</span
+				>.
+			</p>
+			<!-- Calendly Button Embed (Replace with your Calendly Embed code) -->
+			<!-- <div class="flex justify-center">
+				<a
+					href="https://calendly.com/your-link"
+					target="_blank"
+					class="rounded-lg bg-[#FFC300] px-8 py-3 text-xl font-semibold text-[#1D3557] transition duration-300 hover:bg-[#e5b100]"
+				>
+					Book Your Health Check Now
+				</a>
+			</div> -->
+			<Calendly />
+		</section>
+
+		<!-- Benefits Section -->
+		<section class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+			<div class="rounded-lg border bg-white p-6 text-center shadow-md">
+				<h3 class="mb-4 text-2xl font-semibold text-[#1D3557]">Real-Time Advice</h3>
+				<p class="text-gray-700">
+					Get tailored recommendations for your specific PCO setup, with clear advice on improving
+					workflows and system organization.
+				</p>
+			</div>
+			<div class="rounded-lg border bg-white p-6 text-center shadow-md">
+				<h3 class="mb-4 text-2xl font-semibold text-[#1D3557]">Detailed Report</h3>
+				<p class="text-gray-700">
+					Receive a written and video report with system health scores, so you know exactly where
+					you stand and what needs attention.
+				</p>
+			</div>
+			<div class="rounded-lg border bg-white p-6 text-center shadow-md">
+				<h3 class="mb-4 text-2xl font-semibold text-[#1D3557]">Prioritized Action Plan</h3>
+				<p class="text-gray-700">
+					Walk away with a step-by-step, prioritized action plan to fix and optimize your system—no
+					guesswork.
+				</p>
+			</div>
+		</section>
+
+		<!-- Want it Done For You Section -->
+		<section class="mb-12 text-center">
+			<p class="mb-4 text-lg text-gray-700">
+				💡 Want it done <span class="font-semibold">for</span> you? With my
+				<span class="text-[#FFC300]">Deployment Project</span>, I'll handle the fixes and
+				improvements for you—plus, your Health Check fee is fully applied to the project!
+			</p>
+			<div class="flex justify-center">
+				<a
+					href="https://calendly.com/your-link"
+					target="_blank"
+					class="rounded-lg bg-[#FFC300] px-8 py-3 text-xl font-semibold text-[#1D3557] transition duration-300 hover:bg-[#e5b100]"
+				>
+					Book Your Health Check Now
+				</a>
+			</div>
+		</section>
+
+		<!-- Footer Section -->
+		<section class="mt-12 text-center text-gray-600">
+			<p>
+				Questions? Email us at <a href="mailto:support@yourdomain.com" class="text-[#1D3557]"
+					>support@yourdomain.com</a
+				>
+			</p>
+		</section>
+	</div>
+</Layout>
+</file>
+
+<file path=".github/workflows/build.yml">
+name: Build and Deploy Astro Project
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      # Cache node modules for faster builds
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+
+      - name: Test SSH Connection
+        run: |
+          ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_PUBLIC_IP }} "echo Hello World"
+
+      - name: Deploy to EC2
+        env:
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+        run: |
+          # Sync the build directory to the EC2 instance
+          echo "EC2_SSH_KEY" > private_key.pem
+          chmod 600 private_key.pem
+          rsync -avz -e "ssh -i private_key.pem -o StrictHostKeyChecking=no" ./dist/ ubuntu@${{ secrets.EC2_PUBLIC_IP }}:/srv/sunday-ready-slns
+
+      - name: Restart Caddy
+        run: |
+          ssh ubuntu@${{ secrets.EC2_PUBLIC_IP }} "sudo systemctl restart caddy"
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
 </file>
 
 </files>

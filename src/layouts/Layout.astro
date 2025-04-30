@@ -1,40 +1,51 @@
+---
+import Calendly from '../components/Calendly.astro'
+---
+
 <!doctype html>
-<template>
-  <html lang="en">
-    <head>
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-N3ES0T09G1"></script>
-      <script is:inline>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
+<html lang="en">
+	<head>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-N3ES0T09G1"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || []
+			function gtag() {
+				dataLayer.push(arguments)
+			}
+			gtag('js', new Date())
 
-        gtag("config", "G-N3ES0T09G1");
-      </script>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Planning Center Health Check</title>
-      <link rel="stylesheet" href="/tailwind.css" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-      />
-    </head>
-    <!-- Google tag (gtag.js) -->
-    <body class="bg-gray-50">
-      <main class="container mx-auto px-4 py-8">
-        <slot />
-      </main>
+			gtag('config', 'G-N3ES0T09G1')
+		</script>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Planning Center Health Check</title>
+		<link rel="stylesheet" href="/tailwind.css" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-two@5.2.5/index.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<!-- Google tag (gtag.js) -->
+	<body class="bg-[#F5F5F5] text-[#333333]">
+		<!-- Header Section -->
+		<header class="flex justify-between bg-[#1D3557] p-4 px-8">
+			<img
+				src="src/assets/sunday-ready-horiz-dark-background.svg"
+				class="w-24"
+				alt="Sunday Ready Solutions"
+			/>
+			<Calendly />
+		</header>
 
-      <!-- Footer -->
-      <footer class="mt-12 bg-gray-900 py-4 text-white">
-        <div class="container mx-auto px-4 text-center">
-          © 2025 Sunday Ready Solutions. All rights reserved.
-        </div>
-      </footer>
-    </body>
-  </html>
-</template>
+		<!-- Main Content Section -->
+		<main>
+			<slot />
+		</main>
+
+		<!-- Footer Section -->
+		<footer class="mt-12 bg-[#1D3557] py-4 text-white">
+			<div class="container mx-auto px-4 text-center text-sm">
+				© 2025 Sunday Ready Solutions. All rights reserved.
+			</div>
+		</footer>
+	</body>
+</html>
