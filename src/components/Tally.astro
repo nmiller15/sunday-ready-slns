@@ -1,0 +1,12 @@
+---
+const { url = 'https://tally.so/r/your-tally-id', label = 'Get More Info' } = Astro.props
+---
+
+<a
+	href={url}
+	target="_blank"
+	rel="noopener noreferrer"
+	class="rounded-lg border border-[#e5b100] bg-[#e5b100] px-6 py-2 font-semibold text-white shadow-md transition hover:shadow-lg"
+>
+	{label}
+</a>
