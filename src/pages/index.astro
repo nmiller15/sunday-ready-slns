@@ -1,292 +1,132 @@
 ---
-import Calendly from '../components/Calendly.astro'
+import Tally from '../components/Tally.astro'
 import Layout from '../layouts/Layout.astro'
 import '../styles/global.css'
 ---
 
 <Layout>
-	<div class="container mx-auto px-4 py-12">
+	<div class="mx-auto max-w-3xl space-y-36 px-4 py-20 sm:px-6 lg:px-8">
 		<!-- Hero Section -->
-		<section class="py-16 text-center">
-			<h1 class="text-3xl leading-tight font-bold text-[#1D3557]">
-				Clear Next Steps for Your Planning Center Strategy
+		<section class="space-y-6 text-center">
+			<h1 class="text-charcoal text-4xl leading-tight font-bold tracking-tight sm:text-5xl">
+				Planning Center Doesn’t Have to Be Overwhelming
 			</h1>
-			<p class="mt-4 text-xl text-[#333333]">
-				...so you can get back to what matters most: <span class="font-bold">ministry</span>.
+			<p class="mx-auto max-w-2xl text-lg leading-relaxed text-gray-600 sm:text-xl">
+				If you feel like you're constantly fixing Planning Center instead of using it, you're not
+				alone. I'll show you what to fix first and how to get clarity fast.
 			</p>
-			<p class="mt-6 text-base text-[#333333] sm:text-lg">
-				Feeling stuck or overwhelmed by the tech side of things? Let's make Planning Center work for
-				you, not against you.
-			</p>
-			<div class="mt-12">
-				<Calendly />
+			<div class="mt-10">
+				<Tally url="https://tally.so/r/wogXxX" label="Send Me the Info" />
 			</div>
 		</section>
-	</div>
 
-	<!-- Problem Section -->
-	<div class="container mx-auto bg-[#F5F5F5] px-4 py-12">
-		<section class="px-4 py-6 sm:px-6 lg:px-8">
-			<div class="mx-auto max-w-3xl text-center">
-				<h2 class="mb-4 text-2xl font-bold text-[#1D3557] sm:text-3xl">
-					Planning Center shouldn't feel like a second full-time job.
-				</h2>
-				<p class="mb-6 text-base text-[#333333] sm:text-lg">
-					You signed up for Planning Center to help you lead more efficiently—not to spend hours
-					googling how to make it all work. But between endless how-to videos, a tangled database,
-					and too many volunteers slipping through the cracks, it's easy to feel stuck, overwhelmed,
-					and like ministry is taking a back seat to admin work.
-				</p>
-				<p class="mb-6 text-lg font-medium text-[#333333] italic">
-					You shouldn't need a tech degree to do what God called you to do.
-				</p>
-				<ul class="mx-auto max-w-md space-y-3 text-left text-[#333333]">
-					<li class="flex items-start gap-2">
-						<span class="mt-1 text-[#A8C686]">✔</span>
-						Anxious about missing people or follow-ups
-					</li>
-					<li class="flex items-start gap-2">
-						<span class="mt-1 text-[#A8C686]">✔</span>
-						Unsure if you're even using PCO “right”
-					</li>
-					<li class="flex items-start gap-2">
-						<span class="mt-1 text-[#A8C686]">✔</span>
-						Wasting hours on tasks that should be automatic
-					</li>
-					<li class="flex items-start gap-2">
-						<span class="mt-1 text-[#A8C686]">✔</span>
-						Volunteers slipping away unnoticed
-					</li>
-				</ul>
-			</div>
-		</section>
-	</div>
-
-	<section class="bg-[#F5F5F5] px-4 py-12 sm:px-6 lg:px-8">
-		<div class="mx-auto max-w-3xl text-center">
-			<!-- Empathy -->
-			<h2 class="mb-4 text-2xl font-bold text-[#1D3557] sm:text-3xl">
-				I get it—ministry isn't supposed to feel like managing a startup.
+		<!-- Problem Section -->
+		<section class="space-y-6 text-center">
+			<h2 class="text-charcoal text-2xl font-semibold tracking-tight sm:text-3xl">
+				Planning Center shouldn't feel like a second job.
 			</h2>
-			<p class="mb-10 text-base text-[#333333] sm:text-lg">
-				When I started in ministry, I was fired up to connect with people and share the message of
-				Jesus. But the admin side quickly became overwhelming. Planning Center had potential, but it
-				felt like learning a new language.
-				<br class="hidden sm:block" />
-				After years of trial and error, I finally learned how to make it work <strong>for</strong> me—not
-				against me. Now I help churches do the same, saving hours of time and helping pastors get back
-				to what they were actually called to do.
+			<p class="mx-auto max-w-2xl leading-relaxed text-gray-600">
+				From scattered data to missed follow-ups, it's easy to get stuck in admin quicksand.
 			</p>
-
-			<!-- Authority -->
-			<h3 class="mb-2 text-xl font-semibold text-[#1D3557]">
-				I've spent the late nights, so you don't have to.
-			</h3>
-			<p class="text-base text-[#333333] sm:text-lg">
-				I've worked with churches of all sizes to streamline their Planning Center setups—from
-				Sunday check-ins to automated follow-ups—so leaders can spend more time shepherding people
-				and less time chasing systems. Whether you're just getting started or rebuilding after
-				losing a key team member, I'll help you get clarity, fast.
-			</p>
-		</div>
-	</section>
-
-	<!-- Plan -->
-	<section class="bg-white px-4 py-16 sm:px-6 lg:px-8">
-		<div class="mx-auto max-w-3xl text-center">
-			<h2 class="mb-4 text-2xl font-bold text-[#1D3557] sm:text-3xl">
-				A simple process to turn chaos into clarity
-			</h2>
-			<p class="mb-10 text-base text-[#333333] sm:text-lg">
-				You don't need to overhaul everything to get results. This streamlined process gives you
-				clear wins, fast—without taking over your week.
-			</p>
-
-			<div class="space-y-6 text-left">
-				<div class="flex items-start gap-4">
-					<!-- Number 1 with underline -->
-					<div
-						class="text-3xl font-bold text-[#1D3557] underline decoration-[#A8C686] decoration-4"
-					>
-						1
-					</div>
-					<div>
-						<p class="text-lg font-semibold text-[#333333]">Book your Health Check</p>
-						<p class="text-[#333333]">
-							We'll have a quick chat about your current setup and what you're hoping to improve.
-						</p>
-					</div>
-				</div>
-				<div class="flex items-start gap-4">
-					<!-- Number 2 with underline -->
-					<div
-						class="text-3xl font-bold text-[#1D3557] underline decoration-[#A8C686] decoration-4"
-					>
-						2
-					</div>
-					<div>
-						<p class="text-lg font-semibold text-[#333333]">Get a customized audit</p>
-						<p class="text-[#333333]">
-							On our Zoom call, I'll walk you through your Planning Center setup, highlight areas to
-							optimize, and offer 1–3 quick wins on the spot.
-						</p>
-					</div>
-				</div>
-				<div class="flex items-start gap-4">
-					<!-- Number 3 with underline -->
-					<div
-						class="text-3xl font-bold text-[#1D3557] underline decoration-[#A8C686] decoration-4"
-					>
-						3
-					</div>
-					<div>
-						<p class="text-lg font-semibold text-[#333333]">Walk away with a blueprint</p>
-						<p class="text-[#333333]">
-							You'll receive a full report, a Loom walkthrough, and a plan to move forward—DIY or
-							done-for-you.
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<p class="mt-10 text-base text-[#333333] italic sm:text-lg">
-				Whether you just need direction or want someone to handle it for you, you'll walk away with
-				clarity and momentum.
-			</p>
-		</div>
-	</section>
-
-	<!-- Success Section -->
-	<section class="bg-[#A8C686] px-4 py-16 sm:px-6 lg:px-8">
-		<div class="mx-auto max-w-3xl text-center">
-			<h2 class="mb-4 text-2xl font-bold text-[#1D3557] sm:text-3xl">
-				More time for ministry. Less time managing systems.
-			</h2>
-			<p class="mb-8 text-base text-[#333333] sm:text-lg">
-				When your Planning Center setup works <strong>for</strong> you—not against you—you can spend
-				less time chasing details and more time connecting with people. With a clear, optimized system
-				in place, your team knows exactly what to do, and you're free to focus on what matters most.
-			</p>
-
-			<ul class="mb-10 space-y-4 text-left text-[#333333] sm:text-lg">
-				<li>✓ Finally understand what your system is doing—and what it's missing</li>
-				<li>✓ Feel confident handing off tasks and workflows to your team</li>
-				<li>✓ Stop worrying about things slipping through the cracks</li>
-				<li>✓ Get back to what you were called to do: people, not process</li>
-				<li>✓ A calm, clear system that grows with your church</li>
+			<ul class="mx-auto mt-8 max-w-md space-y-5 text-left text-base text-gray-700">
+				<li class="flex items-center gap-3">
+					<i data-lucide="alert-triangle" class="text-charcoal h-5 w-5"></i>
+					<span>Worried people are falling through the cracks</span>
+				</li>
+				<li class="flex items-center gap-3">
+					<i data-lucide="help-circle" class="text-charcoal h-5 w-5"></i>
+					<span>Not sure if you’re using PCO the right way</span>
+				</li>
+				<li class="flex items-center gap-3">
+					<i data-lucide="clock" class="text-charcoal h-5 w-5"></i>
+					<span>Wasting hours on what should be automatic</span>
+				</li>
+				<li class="flex items-center gap-3">
+					<i data-lucide="user-minus" class="text-charcoal h-5 w-5"></i>
+					<span>Volunteers falling off without notice</span>
+				</li>
 			</ul>
+		</section>
 
-			<p class="text-base text-[#333333] italic sm:text-lg">
-				You're just one session away from a smoother, more focused ministry.
-			</p>
-		</div>
-	</section>
-
-	<section class="bg-[#F5F5F5] px-4 py-16 sm:px-6 lg:px-8">
-		<div class="mx-auto max-w-2xl text-center">
-			<h2 class="mb-4 text-2xl font-bold text-[#1D3557] sm:text-3xl">
-				Get clarity. Save time. Serve better.
+		<!-- Empathy/Authority Section -->
+		<section class="space-y-6 text-center">
+			<h2 class="text-charcoal text-2xl font-semibold tracking-tight sm:text-3xl">
+				You’re not doing anything wrong—this stuff is just messy.
 			</h2>
-			<p class="mb-6 text-base text-[#333333] sm:text-lg">
-				You don’t have to figure it all out alone. Let’s fix what’s not working and build a system
-				that actually supports your ministry.
+			<p class="mx-auto max-w-2xl leading-relaxed text-gray-600">
+				I’ve spent years cleaning up Planning Center chaos. Now I help churches create systems that
+				save time and support ministry—not sabotage it.
 			</p>
-			<p class="mb-8 text-sm text-[#333333] italic sm:text-base">
-				This one call could save you hours every week and help your team feel less overwhelmed. Your
-				future self will thank you.
-			</p>
+		</section>
 
-			<Calendly />
-
-			<p class="mt-6 text-sm text-[#333333] sm:text-base">
-				<span class="font-semibold">Need help implementing the fixes?</span><br />
-				Your Health Check fee rolls straight into your first Deployment Project—no extra cost to get
-				started.
-			</p>
-		</div>
-	</section>
-
-	<!-- FAQ Section -->
-	<section class="bg-white px-4 py-16 sm:px-6 lg:px-8">
-		<div class="mx-auto max-w-3xl">
-			<h2 class="mb-8 text-center text-2xl font-bold text-[#1D3557] sm:text-3xl">
-				Frequently Asked Questions
+		<!-- Plan Section -->
+		<section class="space-y-10 text-center">
+			<h2 class="text-charcoal text-2xl font-semibold tracking-tight sm:text-3xl">
+				A simple path to clarity
 			</h2>
-			<div class="space-y-6">
-				<div>
-					<h3 class="text-lg font-semibold text-[#1D3557]">How much does the Health Check cost?</h3>
-					<p class="text-[#333333]">
-						The Health Check is $300. It includes a 60-minute Zoom session, a personalized report, a
-						Loom walkthrough, and 7 days of email follow-up.
+			<p class="mx-auto max-w-2xl leading-relaxed text-gray-600">
+				No need to start from scratch. I’ll help you focus on what matters most, right now.
+			</p>
+
+			<div class="grid gap-8 sm:grid-cols-1 md:grid-cols-3">
+				<!-- Step 1 -->
+				<div
+					class="hover:border-sage-500 rounded-2xl border border-gray-200 bg-white p-6 text-left shadow-sm transition duration-300 ease-in-out hover:shadow-lg"
+				>
+					<div
+						class="bg-sage-500 mb-4 flex h-12 w-12 items-center justify-center rounded-full shadow-md"
+					>
+						<i data-lucide="calendar" class="text-charcoal h-6 w-6"></i>
+					</div>
+					<h3 class="text-charcoal text-lg font-bold tracking-tight">Submit Your Email</h3>
+					<p class="mt-2 text-gray-600">I’ll send you the overview + next steps.</p>
+				</div>
+
+				<!-- Step 2 -->
+				<div
+					class="hover:border-sage-500 rounded-2xl border border-gray-200 bg-white p-6 text-left shadow-sm transition duration-300 ease-in-out hover:shadow-lg"
+				>
+					<div
+						class="bg-sage-500 mb-4 flex h-12 w-12 items-center justify-center rounded-full shadow-md"
+					>
+						<i data-lucide="search-check" class="text-charcoal h-6 w-6"></i>
+					</div>
+					<h3 class="text-charcoal text-lg font-bold tracking-tight">Get a Simple Breakdown</h3>
+					<p class="mt-2 text-gray-600">
+						Understand the 1–3 things that will make the biggest difference right away.
 					</p>
 				</div>
 
-				<div>
-					<h3 class="text-lg font-semibold text-[#1D3557]">
-						Do I need to prepare anything before the call?
-					</h3>
-					<p class="text-[#333333]">
-						Just fill out a quick intake form and give manager access to Planning Center—we’ll take
-						it from there.
-					</p>
-				</div>
-
-				<div>
-					<h3 class="text-lg font-semibold text-[#1D3557]">Will you fix everything for me?</h3>
-					<p class="text-[#333333]">
-						During the call, we’ll focus on quick wins and diagnosing what needs work. If you want
-						hands-on help, your Health Check fee rolls into your first Deployment Project.
-					</p>
-				</div>
-
-				<div>
-					<h3 class="text-lg font-semibold text-[#1D3557]">
-						Is this for churches that are brand new to Planning Center?
-					</h3>
-					<p class="text-[#333333]">
-						Yes! Whether you're brand new or feeling overwhelmed mid-setup, this Health Check is
-						designed to bring clarity and direction.
-					</p>
-				</div>
-
-				<div>
-					<h3 class="text-lg font-semibold text-[#1D3557]">What if I’m not technical at all?</h3>
-					<p class="text-[#333333]">
-						No problem. You don’t need to be a tech expert—I’ll explain everything clearly and make
-						sure you leave with a simple plan.
+				<!-- Step 3 -->
+				<div
+					class="hover:border-sage-500 rounded-2xl border border-gray-200 bg-white p-6 text-left shadow-sm transition duration-300 ease-in-out hover:shadow-lg"
+				>
+					<div
+						class="bg-sage-500 mb-4 flex h-12 w-12 items-center justify-center rounded-full shadow-md"
+					>
+						<i data-lucide="file-text" class="text-charcoal h-6 w-6"></i>
+					</div>
+					<h3 class="text-charcoal text-lg font-bold tracking-tight">Move Forward with Clarity</h3>
+					<p class="mt-2 text-gray-600">
+						Use the info to DIY or explore working together—your call.
 					</p>
 				</div>
 			</div>
-		</div>
-	</section>
 
-	<!-- CTA Recap Section -->
-	<section class="bg-[#A8C686] px-4 py-16 sm:px-6 lg:px-8">
-		<div class="mx-auto max-w-3xl text-center">
-			<h2 class="mb-4 text-2xl font-bold text-[#1D3557] sm:text-3xl">
-				Ready to take control of your Planning Center?
-			</h2>
-			<p class="mb-6 text-base text-[#333333] sm:text-lg">
-				A clearer system, less stress, and more time for the ministry that matters most are just one
-				call away. Let’s uncover exactly what’s not working and fix it together—so you can get back
-				to serving your church.
+			<p class="mx-auto mt-12 max-w-2xl text-gray-600 italic">
+				This isn’t a sales trap. It’s clarity, first—so you can decide if you want help or not.
 			</p>
-			<p class="mb-8 text-sm text-[#333333] italic sm:text-base">
-				Your Health Check fee goes toward your first Deployment Project, so you can get the help you
-				need—without the extra cost.
+		</section>
+
+		<!-- CTA Section -->
+		<section class="bg-sage text-charcoal rounded-xl px-6 py-16 text-center shadow-lg">
+			<h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Want to see what’s possible?</h2>
+			<p class="mt-3 text-lg sm:text-xl">
+				I'll send over the breakdown and you can decide if a deeper audit makes sense.
 			</p>
-
-			<Calendly />
-		</div>
-	</section>
-
-	<!-- Footer Section -->
-	<section class="mt-12 text-center text-[#333333]">
-		<p>
-			Questions?<br /> Email me ➡️ <a
-				href="mailto:nolan@sundayreadysolutions.com"
-				class="font-semibold text-[#1D3557]">nolan@sundayreadysolutions.com</a
-			>
-		</p>
-	</section>
+			<div class="mt-8">
+				<Tally url="https://tally.so/r/wogXxX" label="Send Me the Info" />
+			</div>
+		</section>
+	</div>
 </Layout>
