@@ -2,6 +2,9 @@
 import Tally from '../components/Tally.astro'
 import '../styles/global.css'
 import logo from '../assets/sunday-ready-horiz-light-background.png'
+import favicon from '../assets/favicon.svg'
+
+console.log(favicon.src)
 ---
 
 <!doctype html>
@@ -15,7 +18,7 @@ import logo from '../assets/sunday-ready-horiz-light-background.png'
 			rel="stylesheet"
 		/>
 		<script src="https://unpkg.com/lucide@latest" defer></script>
-
+		<link rel="icon" href={favicon.src} type="image/svg+xml" />
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-N3ES0T09G1"></script>
 		<script is:inline>
 			window.dataLayer = window.dataLayer || []
@@ -33,7 +36,7 @@ import logo from '../assets/sunday-ready-horiz-light-background.png'
 			class="sticky top-0 z-50 border-b border-gray-200 bg-white/90 px-6 py-4 shadow backdrop-blur-sm"
 		>
 			<div class="mx-auto flex max-w-3xl items-center justify-between">
-				<img src={logo.src} class="h-6" alt="Sunday Ready Solutions" />
+				<img src={logo.src} class="h-8" alt="Sunday Ready Solutions" />
 				<Tally url="https://tally.so/r/wogXxX" label="Get More Info" />
 			</div>
 		</header>
